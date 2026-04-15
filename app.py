@@ -7,7 +7,7 @@ load_dotenv()
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins="*")
 
 def connect_db():
     return psycopg2.connect(os.environ.get('DATABASE_URL'))
