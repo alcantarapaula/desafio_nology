@@ -49,7 +49,7 @@ def consulta():
   db = connect_db()
   cursor = db.cursor()
   cursor.execute("""
-    SELECT tipo_cliente, valor_compra, valor_cashback, criado_em FROM compras WHERE ip = %s
+    SELECT tipo_cliente, valor_compra, valor_cashback, criado_em FROM compras WHERE ip = %s ORDER BY criado_em DESC
   """, (ip,))
   resultados = cursor.fetchall()
   cursor.close()
